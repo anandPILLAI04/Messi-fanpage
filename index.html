@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="argentina">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIONEL MESSI | THE GOAT - Interactive Documentary Experience</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Outfit:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Theme-aware Interactive Canvas Particles -->
+    <canvas id="ambient-particles"></canvas>
+
+    <!-- Dynamic Glowing Mesh Blobs -->
+    <div class="mesh-blob-1"></div>
+    <div class="mesh-blob-2"></div>
+
+    <!-- Ambient Sound System Header -->
+    <header class="harness-header">
+        <div class="header-logo">
+            <span class="logo-m">M</span>
+            <span class="logo-text">LM10</span>
+        </div>
+        
+        <div class="audio-control-panel" id="sound-control-panel">
+            <button class="control-btn" id="btn-ambient-toggle" title="Toggle Ambient Stadium Atmosphere">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+                <span class="sound-label">Stadium Noise</span>
+            </button>
+            <div class="volume-slider-container">
+                <input type="range" id="ambient-volume" min="0" max="1" step="0.1" value="0.3" aria-label="Volume">
+            </div>
+        </div>
+
+        <div class="theme-switcher-harness">
+            <button class="theme-btn active" data-theme-target="argentina" id="theme-btn-arg">
+                <span class="theme-dot arg"></span> Albiceleste
+            </button>
+            <button class="theme-btn" data-theme-target="barcelona" id="theme-btn-bar">
+                <span class="theme-dot bar"></span> Blaugrana
+            </button>
+        </div>
+    </header>
+
+    <!-- SECTION 1: CINEMATIC HERO (FULL-SCREEN PARALLAX) -->
+    <section class="hero-section" id="hero">
+        <div class="hero-parallax-bg"></div>
+        <div class="hero-vignette"></div>
+        
+        <div class="hero-content">
+            <div class="badge-wrapper scale-in">
+                <span class="goat-badge"><span class="badge-star">★</span> THE DOCUMENTARY EXPERIENCE</span>
+            </div>
+            
+            <h1 class="hero-title" id="dynamic-hero-title">
+                <span class="cinzel-gold">LIONEL</span> 
+                <span class="cinzel-outline">MESSI</span>
+            </h1>
+            
+            <p class="hero-subtitle">
+                A premium, interactive chronicle of football's ultimate legacy. Toggle themes to shift between his international glory and legendary club dynasty.
+            </p>
+            
+            <div class="hero-actions">
+                <a href="#gallery" class="btn primary-btn btn-glowing">Enter Gallery</a>
+                <a href="#moments" class="btn secondary-btn">Watch Reels</a>
+            </div>
+        </div>
+
+        <div class="hero-sphere-wrapper">
+            <div class="jersey-sphere-glow-ring"></div>
+            <div class="jersey-sphere">
+                <div class="stripes-overlay"></div>
+                <div class="jersey-number">10</div>
+            </div>
+            <div class="avatar-glow"></div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span class="scroll-mouse"><span class="mouse-wheel"></span></span>
+            <span class="scroll-label">Scroll to Explore</span>
+        </div>
+    </section>
+
+    <!-- QUICK METRICS STRIP -->
+    <section class="metrics-strip" id="metrics-bar">
+        <div class="metric-item">
+            <div class="metric-num-wrap"><span class="metric-val" data-target="838">0</span></div>
+            <span class="metric-label">Career Goals</span>
+        </div>
+        <div class="metric-separator"></div>
+        <div class="metric-item">
+            <div class="metric-num-wrap"><span class="metric-val" data-target="374">0</span></div>
+            <span class="metric-label">Assists</span>
+        </div>
+        <div class="metric-separator"></div>
+        <div class="metric-item">
+            <div class="metric-num-wrap"><span class="metric-val" data-target="1069">0</span></div>
+            <span class="metric-label">Appearances</span>
+        </div>
+        <div class="metric-separator"></div>
+        <div class="metric-item">
+            <div class="metric-num-wrap"><span class="metric-val" data-target="45">0</span></div>
+            <span class="metric-label">Trophies</span>
+        </div>
+    </section>
+
+    <!-- Main Wrapper -->
+    <main class="main-wrapper">
+
+        <!-- SECTION 2: DEDICATED CAREER GALLERY -->
+        <section class="section-container gallery-section" id="gallery">
+            <h2 class="section-heading">CAREER <span class="accent-text">GALLERY</span></h2>
+            <p class="section-desc">Witness high-fidelity imagery captured from the defining chapters of Leo's life.</p>
+            
+            <div class="gallery-grid">
+                <!-- Barcelona Era -->
+                <div class="gallery-card scroll-reveal">
+                    <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=800&q=80" alt="Barcelona Era" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-era">2004 - 2021</span>
+                        <h3>Barcelona Dynasty</h3>
+                        <p>672 goals, 10 La Liga titles, and 4 Champions Leagues. The architecture of his legendary Camp Nou reign.</p>
+                    </div>
+                </div>
+
+                <!-- Argentina National Team -->
+                <div class="gallery-card scroll-reveal">
+                    <img src="https://images.unsplash.com/photo-1543351611-58f69d7c1781?auto=format&fit=crop&w=800&q=80" alt="Argentina National Team" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-era">2005 - Present</span>
+                        <h3>Albiceleste Captaincy</h3>
+                        <p>Carrying the hopes of a nation. Relive the journey of leading the national team through decades of struggle to glory.</p>
+                    </div>
+                </div>
+
+                <!-- World Cup 2022 moments -->
+                <div class="gallery-card scroll-reveal tall">
+                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=800&q=80" alt="World Cup Coronation" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-era">Qatar 2022</span>
+                        <h3>World Cup Coronation</h3>
+                        <p>The crowning achievement of his career. Lifting the golden trophy in Qatar after the greatest final in history.</p>
+                    </div>
+                </div>
+
+                <!-- Inter Miami Era -->
+                <div class="gallery-card scroll-reveal">
+                    <img src="https://images.unsplash.com/photo-1504150558553-0bbe7c70c0c9?auto=format&fit=crop&w=800&q=80" alt="Inter Miami Era" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-era">2023 - Present</span>
+                        <h3>Inter Miami Magic</h3>
+                        <p>Conquering America. Lighting up the MLS, winning the Leagues Cup, and bringing global prestige to South Florida.</p>
+                    </div>
+                </div>
+
+                <!-- Trophy celebrations -->
+                <div class="gallery-card scroll-reveal">
+                    <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=800&q=80" alt="Ballon d'Or Celebration" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-era">8 Ballon d'Ors</span>
+                        <h3>The Golden Standard</h3>
+                        <p>Celebrating unparalleled individual dominance. The only player to claim 8 Ballon d'Or awards across three decades.</p>
+                    </div>
+                </div>
+
+                <!-- Iconic goal celebrations -->
+                <div class="gallery-card scroll-reveal tall">
+                    <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=800&q=80" alt="Iconic Goal Celebration" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-era">Iconic Gesture</span>
+                        <h3>Dedication to the Sky</h3>
+                        <p>Leo's trademark double-finger skyward salute, dedicated to his grandmother Celia, who first believed in his genius.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: GREATEST MOMENTS HIGHLIGHT REEL -->
+        <section class="section-container moments-section" id="moments">
+            <h2 class="section-heading">GREATEST <span class="accent-text">MOMENTS</span></h2>
+            <p class="section-desc">Interactive cinematic screener. Play the definitive matches of Leo's history.</p>
+            
+            <div class="moments-grid">
+                <!-- Moment 1 -->
+                <div class="moment-card scroll-reveal" data-moment-index="0">
+                    <div class="moment-thumbnail">
+                        <div class="thumbnail-glow-overlay"></div>
+                        <div class="play-btn-circle">
+                            <span class="play-triangle"></span>
+                        </div>
+                        <span class="moment-duration">03:15</span>
+                    </div>
+                    <div class="moment-info">
+                        <span class="moment-tag">La Liga 2007</span>
+                        <h3>Solo Run vs Getafe</h3>
+                        <p>Recreating Maradona's goal of the century: dribbling past 5 players and the goalkeeper from his own half.</p>
+                    </div>
+                </div>
+
+                <!-- Moment 2 -->
+                <div class="moment-card scroll-reveal" data-moment-index="1">
+                    <div class="moment-thumbnail">
+                        <div class="thumbnail-glow-overlay"></div>
+                        <div class="play-btn-circle">
+                            <span class="play-triangle"></span>
+                        </div>
+                        <span class="moment-duration">04:30</span>
+                    </div>
+                    <div class="moment-info">
+                        <span class="moment-tag">Calendar Year 2012</span>
+                        <h3>The 91 Goals Record</h3>
+                        <p>Relive the year Lionel Messi shattered Gerd Müller's record, scoring a legendary 91 goals in a single year.</p>
+                    </div>
+                </div>
+
+                <!-- Moment 3 -->
+                <div class="moment-card scroll-reveal" data-moment-index="2">
+                    <div class="moment-thumbnail">
+                        <div class="thumbnail-glow-overlay"></div>
+                        <div class="play-btn-circle">
+                            <span class="play-triangle"></span>
+                        </div>
+                        <span class="moment-duration">05:20</span>
+                    </div>
+                    <div class="moment-info">
+                        <span class="moment-tag">El Clásico 2017</span>
+                        <h3>The Bernabéu Shirt Lift</h3>
+                        <p>Scoring a last-gasp winner (his 500th Barca goal) and holding his jersey up to the stunned Madrid crowd.</p>
+                    </div>
+                </div>
+
+                <!-- Moment 4 -->
+                <div class="moment-card scroll-reveal" data-moment-index="3">
+                    <div class="moment-thumbnail">
+                        <div class="thumbnail-glow-overlay"></div>
+                        <div class="play-btn-circle">
+                            <span class="play-triangle"></span>
+                        </div>
+                        <span class="moment-duration">08:45</span>
+                    </div>
+                    <div class="moment-info">
+                        <span class="moment-tag">World Cup 2022</span>
+                        <h3>The Lusail Coronation</h3>
+                        <p>The double-goal final and penalty shootout climax that crowned Messi with the ultimate world championship.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: RECORDS & MILESTONES DASHBOARD -->
+        <section class="section-container records-section" id="records">
+            <h2 class="section-heading">RECORDS & <span class="accent-text">MILESTONES</span></h2>
+            <p class="section-desc">Explore the statistical records that make Leo the undisputed GOAT.</p>
+            
+            <div class="records-dashboard">
+                <div class="record-box scroll-reveal">
+                    <span class="record-stat">91</span>
+                    <span class="record-title">Calendar Year Goals</span>
+                    <p class="record-desc">Guinness World Record for most goals scored in a single calendar year (2012).</p>
+                </div>
+                <div class="record-box scroll-reveal">
+                    <span class="record-stat">474</span>
+                    <span class="record-title">La Liga Goals</span>
+                    <p class="record-desc">The all-time highest scoring player in the history of Spanish domestic football.</p>
+                </div>
+                <div class="record-box scroll-reveal">
+                    <span class="record-stat">8</span>
+                    <span class="record-title">Ballon d'Ors</span>
+                    <p class="record-desc">The ultimate individual accolade, claimed across three decades (2009-2023).</p>
+                </div>
+                <div class="record-box scroll-reveal">
+                    <span class="record-stat">45</span>
+                    <span class="record-title">Total Trophies</span>
+                    <p class="record-desc">The most decorated footballer in history, holding the record for total career trophies won.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: STATS ENGINE -->
+        <section class="section-container stats-section" id="stats">
+            <h2 class="section-heading"><span class="accent-text">STATS</span> ENGINE</h2>
+            <p class="section-desc">Analyze Leo's historic metrics filtered by his career milestones.</p>
+            
+            <div class="stats-toggle-bar">
+                <button class="stats-filter-btn active" data-filter="all">Overall Career</button>
+                <button class="stats-filter-btn" data-filter="barca">FC Barcelona</button>
+                <button class="stats-filter-btn" data-filter="arg">Argentina</button>
+                <button class="stats-filter-btn" data-filter="other">PSG & Miami</button>
+            </div>
+
+            <div class="stats-grid">
+                <!-- Card 1: Scoring Ratio -->
+                <div class="stats-card">
+                    <div class="card-inner">
+                        <div class="card-glow"></div>
+                        <h3 class="card-title">Scoring Efficiency</h3>
+                        <div class="progress-radial-container">
+                            <svg class="radial-svg" viewBox="0 0 100 100">
+                                <circle class="radial-track" cx="50" cy="50" r="40"></circle>
+                                <circle class="radial-fill" id="ratio-fill" cx="50" cy="50" r="40"></circle>
+                            </svg>
+                            <div class="radial-center-text">
+                                <span class="radial-val" id="ratio-val">0.78</span>
+                                <span class="radial-unit">goals / game</span>
+                            </div>
+                        </div>
+                        <p class="card-text">A career average that rivals entire teams. He is the most clinical finisher in football history.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Interactive Breakdown -->
+                <div class="stats-card span-two">
+                    <div class="card-inner">
+                        <div class="card-glow"></div>
+                        <h3 class="card-title">Performance Distribution</h3>
+                        <div class="chart-container">
+                            <div class="bar-chart-y">
+                                <div class="chart-row">
+                                    <span class="chart-row-label">Goals</span>
+                                    <div class="chart-bar-wrapper">
+                                        <div class="chart-bar" id="bar-goals" style="width: 0%"></div>
+                                    </div>
+                                    <span class="chart-bar-val" id="lbl-goals">838</span>
+                                </div>
+                                <div class="chart-row">
+                                    <span class="chart-row-label">Assists</span>
+                                    <div class="chart-bar-wrapper">
+                                        <div class="chart-bar" id="bar-assists" style="width: 0%"></div>
+                                    </div>
+                                    <span class="chart-bar-val" id="lbl-assists">374</span>
+                                </div>
+                                <div class="chart-row">
+                                    <span class="chart-row-label">Hat-tricks</span>
+                                    <div class="chart-bar-wrapper">
+                                        <div class="chart-bar" id="bar-hattricks" style="width: 0%"></div>
+                                    </div>
+                                    <span class="chart-bar-val" id="lbl-hattricks">57</span>
+                                </div>
+                                <div class="chart-row">
+                                    <span class="chart-row-label">Free Kicks</span>
+                                    <div class="chart-bar-wrapper">
+                                        <div class="chart-bar" id="bar-freekicks" style="width: 0%"></div>
+                                    </div>
+                                    <span class="chart-bar-val" id="lbl-freekicks">65</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Year-on-Year Peak -->
+                <div class="stats-card">
+                    <div class="card-inner">
+                        <div class="card-glow"></div>
+                        <h3 class="card-title">Peak Year (2012)</h3>
+                        <div class="peak-container">
+                            <div class="peak-bubble">
+                                <span class="peak-num">91</span>
+                                <span class="peak-label">Goals in 2012</span>
+                            </div>
+                            <p class="peak-note">Guinness World Record for most goals scored in a single calendar year.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: FAMOUS QUOTES CAROUSEL -->
+        <section class="section-container quotes-section" id="quotes">
+            <h2 class="section-heading">LEGENDARY <span class="accent-text">QUOTES</span></h2>
+            <p class="section-desc">What the footballing world says about the master of the pitch.</p>
+            
+            <div class="quotes-carousel-container scroll-reveal">
+                <div class="quote-slider">
+                    <!-- Slide 1 -->
+                    <div class="quote-slide active">
+                        <div class="quote-mark">“</div>
+                        <p class="quote-text">I have seen the player who will inherit my place in Argentine football and his name is Lionel Messi. Messi is a genius.</p>
+                        <span class="quote-author">— Diego Maradona</span>
+                        <span class="quote-role">Argentina Legend & Icon</span>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="quote-slide">
+                        <div class="quote-mark">“</div>
+                        <p class="quote-text">Don't write about him, don't try to describe him. Just watch him.</p>
+                        <span class="quote-author">— Pep Guardiola</span>
+                        <span class="quote-role">Former FC Barcelona Manager</span>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="quote-slide">
+                        <div class="quote-mark">“</div>
+                        <p class="quote-text">For me, to watch Messi play is a pleasure – it's like having an orgasm – it's an incredible pleasure.</p>
+                        <span class="quote-author">— Luis Figo</span>
+                        <span class="quote-role">Real Madrid & Portuguese Icon</span>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="quote-slide">
+                        <div class="quote-mark">“</div>
+                        <p class="quote-text">When Messi dribbles, he makes the opponent look like a training cone. He is on another level.</p>
+                        <span class="quote-author">— Ronaldinho</span>
+                        <span class="quote-role">FC Barcelona & Brazil Legend</span>
+                    </div>
+                </div>
+                
+                <div class="quote-dots">
+                    <span class="quote-dot active" data-slide="0"></span>
+                    <span class="quote-dot" data-slide="1"></span>
+                    <span class="quote-dot" data-slide="2"></span>
+                    <span class="quote-dot" data-slide="3"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: THE JOURNEY (TIMELINE) -->
+        <section class="section-container timeline-section" id="journey">
+            <h2 class="section-heading">THE <span class="accent-text">JOURNEY</span></h2>
+            <p class="section-desc">Follow the path of a boy from Rosario who conquered the footballing cosmos.</p>
+            
+            <div class="timeline-harness">
+                <div class="timeline-line">
+                    <div class="timeline-progress"></div>
+                </div>
+
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item left scroll-reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">1987 - 2000</span>
+                        <h3>Rosario Beginnings</h3>
+                        <p>Born in Rosario, Argentina. Leo begins playing for local club Newell's Old Boys. At age 10, he is diagnosed with a growth hormone deficiency, paving a difficult path forward.</p>
+                        <div class="timeline-card-footer">
+                            <span class="tag">Newell's</span>
+                            <span class="tag">Rosario</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item right scroll-reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">2000 - 2004</span>
+                        <h3>La Masia Scaffolding</h3>
+                        <p>FC Barcelona's sporting director Charly Rexach offers a contract signed on a paper napkin. The Messi family moves to Spain, and Leo joins the legendary La Masia academy, quickly outclassing older cohorts.</p>
+                        <div class="timeline-card-footer">
+                            <span class="tag">La Masia</span>
+                            <span class="tag">Barcelona</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item left scroll-reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">2004 - 2008</span>
+                        <h3>The Breakthrough</h3>
+                        <p>Debuts under Frank Rijkaard. Scores his first senior goal against Albacete from a Ronaldinho chip. Leads Argentina to Olympic Gold in Beijing (2008) and inherits the famous #10 shirt from Ronaldinho.</p>
+                        <div class="timeline-card-footer">
+                            <span class="tag">Debut</span>
+                            <span class="tag">Olympic Gold</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item right scroll-reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">2008 - 2012</span>
+                        <h3>Pep's False Nine & Glory</h3>
+                        <p>Under Pep Guardiola, Messi is moved to the "False Nine" position. Barcelona achieves an unprecedented Sextuple. Messi wins 4 consecutive Ballons d'Or and finishes 2012 with an astronomical 91 goals.</p>
+                        <div class="timeline-card-footer">
+                            <span class="tag">Sextuple</span>
+                            <span class="tag">4x Ballon d'Or</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 5 -->
+                <div class="timeline-item left scroll-reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">2013 - 2017</span>
+                        <h3>The MSN Era</h3>
+                        <p>Teaming up with Luis Suárez and Neymar Jr, Messi orchestrates the devastating 'MSN' front three. They secure another Treble in 2015, capturing the Champions League and his 5th Ballon d'Or.</p>
+                        <div class="timeline-card-footer">
+                            <span class="tag">MSN Trio</span>
+                            <span class="tag">Treble 2015</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 6 -->
+                <div class="timeline-item right scroll-reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">2018 - 2021</span>
+                        <h3>Captaincy & Farewell</h3>
+                        <p>Appointed Barca captain, Messi carries the club through challenging years. He secures his 6th & 7th Ballon d'Or. In 2021, he wins his first senior international trophy (Copa América) before a tearful farewell to Barcelona due to financial constraints.</p>
+                        <div class="timeline-card-footer">
+                            <span class="tag">Copa América</span>
+                            <span class="tag">PSG Transfer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 7 -->
+                <div class="timeline-item left scroll-reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">2022</span>
+                        <h3>World Cup Coronation</h3>
+                        <p>In Qatar 2022, Lionel Messi guides Argentina to its third FIFA World Cup. Scoring in every knockout stage and twice in the final, he wins the Golden Ball and cements his status as the undisputed GOAT.</p>
+                        <div class="timeline-card-footer">
+                            <span class="tag">World Champion</span>
+                            <span class="tag">Golden Ball</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 8 -->
+                <div class="timeline-item right scroll-reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">2023 - Present</span>
+                        <h3>Miami Magic & 8th Ballon d'Or</h3>
+                        <p>Messi moves to Inter Miami CF, immediately transforming the MLS club and winning the Leagues Cup. He captures a historic 8th Ballon d'Or and continues to delight fans worldwide.</p>
+                        <div class="timeline-card-footer">
+                            <span class="tag">Inter Miami</span>
+                            <span class="tag">8th Ballon d'Or</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: THE TROPHY ROOM -->
+        <section class="section-container honours-section" id="honours">
+            <h2 class="section-heading">THE <span class="accent-text">TROPHY</span> ROOM</h2>
+            <p class="section-desc">Flip the legendary honors Leo has claimed for club and country.</p>
+            
+            <div class="trophy-grid">
+                <!-- Ballon d'Or -->
+                <div class="trophy-card">
+                    <div class="trophy-card-inner">
+                        <!-- Front Face -->
+                        <div class="trophy-front">
+                            <div class="trophy-icon-wrap">
+                                <svg class="trophy-svg" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M12 2a5 5 0 0 0-5 5c0 1.5.7 2.9 1.7 3.8L5.3 16h3.2l1-2h5l1 2h3.2l-3.4-5.2c1-.9 1.7-2.3 1.7-3.8a5 5 0 0 0-5-5zm0 8.5c-1.9 0-3.5-1.6-3.5-3.5S10.1 3.5 12 3.5s3.5 1.6 3.5 3.5-1.6 3.5-3.5 3.5zM2 19h20v2H2v-2z"/>
+                                </svg>
+                            </div>
+                            <h3>Ballon d'Or</h3>
+                            <span class="trophy-count">8 Titles</span>
+                            <span class="flip-hint">Hover / Tap to Reveal</span>
+                        </div>
+                        <!-- Back Face -->
+                        <div class="trophy-back">
+                            <h4>Historic Record</h4>
+                            <p class="years-list">2009, 2010, 2011, 2012, 2015, 2019, 2021, 2023</p>
+                            <p class="trophy-detail">The only player in history to win eight awards. He won them across three different decades and with multiple clubs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- World Cup -->
+                <div class="trophy-card">
+                    <div class="trophy-card-inner">
+                        <!-- Front Face -->
+                        <div class="trophy-front">
+                            <div class="trophy-icon-wrap">
+                                <svg class="trophy-svg" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M12 2c-.6 0-1 .4-1 1v2.1c-1.5.3-2.9 1.2-3.8 2.5l1.6 1c.7-1 1.7-1.6 2.8-1.7V17c-2 0-3.5 1.5-3.5 3.5v1.5h11v-1.5c0-2-1.5-3.5-3.5-3.5V6.9c1.1.1 2.1.7 2.8 1.7l1.6-1C15.9 6.3 14.5 5.4 13 5.1V3c0-.6-.4-1-1-1zm0 3c-.6 0-1-.4-1-1V3.2c0-.1.1-.2.2-.2h1.6c.1 0 .2.1.2.2V4c0 .6-.4 1-1 1zm-2 15.5c0-.8.7-1.5 1.5-1.5h1c.8 0 1.5.7 1.5 1.5v1h-4v-1z"/>
+                                </svg>
+                            </div>
+                            <h3>FIFA World Cup</h3>
+                            <span class="trophy-count">1 Title</span>
+                            <span class="flip-hint">Hover / Tap to Reveal</span>
+                        </div>
+                        <!-- Back Face -->
+                        <div class="trophy-back">
+                            <h4>Qatar 2022</h4>
+                            <p class="years-list">2022</p>
+                            <p class="trophy-detail">Won the Golden Ball, scored 7 goals, and guided Argentina to penalty shootout victory against France in what is widely considered the greatest World Cup final ever.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UEFA Champions League -->
+                <div class="trophy-card">
+                    <div class="trophy-card-inner">
+                        <!-- Front Face -->
+                        <div class="trophy-front">
+                            <div class="trophy-icon-wrap">
+                                <svg class="trophy-svg" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2zm1 17.9v-2.1c1.5-.3 2.7-1.4 3-2.9l1.9.6c-.6 2.1-2.2 3.8-4.3 4.4l-.6-.0zm-2 0c-2.1-.6-3.7-2.3-4.3-4.4l1.9-.6c.3 1.5 1.5 2.6 3 2.9v2.1zm5.9-6.3l-1.9-.6c.1-.3.1-.7 0-1l1.9-.6c.3.7.3 1.5 0 2.2zm-9.8 0c-.3-.7-.3-1.5 0-2.2l1.9.6c-.1.3-.1.7 0 1l-1.9.6zm2.9-6.7c-1.5.3-2.7 1.4-3 2.9l-1.9-.6C6.7 6.1 8.3 4.4 10.4 3.8l.6.0v2.1zm6 0l.6-.0c2.1.6 3.7 2.3 4.3 4.4l-1.9.6c-.3-1.5-1.5-2.6-3-2.9V3.8z"/>
+                                </svg>
+                            </div>
+                            <h3>Champions League</h3>
+                            <span class="trophy-count">4 Titles</span>
+                            <span class="flip-hint">Hover / Tap to Reveal</span>
+                        </div>
+                        <!-- Back Face -->
+                        <div class="trophy-back">
+                            <h4>European Dominance</h4>
+                            <p class="years-list">2006, 2009, 2011, 2015</p>
+                            <p class="trophy-detail">Scored iconic final-defining goals in 2009 and 2011 against Manchester United, establishing Barca as the premier force in club football.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copa America -->
+                <div class="trophy-card">
+                    <div class="trophy-card-inner">
+                        <!-- Front Face -->
+                        <div class="trophy-front">
+                            <div class="trophy-icon-wrap">
+                                <svg class="trophy-svg" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M12 2L4 6v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V6l-8-4zm6 10c0 4.1-2.6 8-6 9.1c-3.4-1.1-6-5-6-9.1V7.3l6-3l6 3V12z"/>
+                                </svg>
+                            </div>
+                            <h3>Copa América</h3>
+                            <span class="trophy-count">2 Titles</span>
+                            <span class="flip-hint">Hover / Tap to Reveal</span>
+                        </div>
+                        <!-- Back Face -->
+                        <div class="trophy-back">
+                            <h4>South American Glory</h4>
+                            <p class="years-list">2021, 2024</p>
+                            <p class="trophy-detail">Brokered Argentina's 28-year trophy drought with a historic win against Brazil at the Maracanã in 2021. Defended the title successfully in 2024.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Golden Shoe -->
+                <div class="trophy-card">
+                    <div class="trophy-card-inner">
+                        <!-- Front Face -->
+                        <div class="trophy-front">
+                            <div class="trophy-icon-wrap">
+                                <svg class="trophy-svg" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M21 12.5c0-.3-.1-.5-.2-.7l-4-5.5C16.5 6.1 16.2 6 16 6h-3.5L12 8.5H9c-1.7 0-3 1.3-3 3v2c0 .3.1.5.2.7l4 5.5c.3.2.6.3.8.3h5c1.7 0 3-1.3 3-3v-4zM8 12.5h2v2H8v-2zm7.5 4.5h-5l-2.9-4h7.9v4z"/>
+                                </svg>
+                            </div>
+                            <h3>European Golden Shoe</h3>
+                            <span class="trophy-count">6 Awards</span>
+                            <span class="flip-hint">Hover / Tap to Reveal</span>
+                        </div>
+                        <!-- Back Face -->
+                        <div class="trophy-back">
+                            <h4>Continental Top Scorer</h4>
+                            <p class="years-list">2010, 2012, 2013, 2017, 2018, 2019</p>
+                            <p class="trophy-detail">Awarded to the top league goalscorer in Europe. Messi holds the all-time single-season record with 50 league goals scored in 2011–12.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- La Liga -->
+                <div class="trophy-card">
+                    <div class="trophy-card-inner">
+                        <!-- Front Face -->
+                        <div class="trophy-front">
+                            <div class="trophy-icon-wrap">
+                                <svg class="trophy-svg" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M12 2L2 22h20L12 2zm0 3.3L19.4 18H4.6L12 5.3zM11 10h2v5h-2v-5zm0-3h2v2h-2V7z"/>
+                                </svg>
+                            </div>
+                            <h3>La Liga</h3>
+                            <span class="trophy-count">10 Titles</span>
+                            <span class="flip-hint">Hover / Tap to Reveal</span>
+                        </div>
+                        <!-- Back Face -->
+                        <div class="trophy-back">
+                            <h4>Domestic Tyranny</h4>
+                            <p class="years-list">2005, 2006, 2009, 2010, 2011, 2013, 2015, 2016, 2018, 2019</p>
+                            <p class="trophy-detail">Constructed the most successful league career in FC Barcelona history. Leo holds the record for most La Liga goals in history with 474.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 9: THE GOAT QUIZ STATION -->
+        <section class="section-container quiz-section" id="quiz">
+            <h2 class="section-heading">GOAT <span class="accent-text">QUIZ</span> STATION</h2>
+            <p class="section-desc">Test your knowledge. Prove your status as the ultimate Messi expert.</p>
+            
+            <div class="quiz-harness">
+                <div class="quiz-visual-harness">
+                    <div class="whistle-flash" id="whistle-alert"></div>
+                </div>
+
+                <!-- Quiz Start View -->
+                <div class="quiz-view" id="quiz-start-view">
+                    <div class="quiz-icon-large">⚽</div>
+                    <h3>Are you a true Messi Fan?</h3>
+                    <p>Answer 10 advanced trivia questions. Stadium sound cues will respond to your accuracy. Speed counts!</p>
+                    <button class="btn primary-btn start-quiz-btn" id="btn-start-quiz">Kick Off Quiz</button>
+                </div>
+
+                <!-- Quiz Active View -->
+                <div class="quiz-view hidden" id="quiz-active-view">
+                    <div class="quiz-progress-bar-container">
+                        <div class="quiz-progress-fill" id="quiz-timer-fill"></div>
+                    </div>
+                    
+                    <div class="quiz-meta">
+                        <span class="question-tracker">Question <span id="current-q-num">1</span> of 10</span>
+                        <span class="timer-text" id="quiz-timer-lbl">15s</span>
+                    </div>
+
+                    <h3 class="quiz-question-text" id="quiz-question-elem">Loading Question...</h3>
+
+                    <div class="quiz-options-container" id="quiz-options-box">
+                        <!-- Dynamically populated buttons -->
+                    </div>
+
+                    <div class="quiz-feedback-banner hidden" id="quiz-feedback-box">
+                        <span class="feedback-icon" id="feedback-icon">⚽</span>
+                        <span class="feedback-text" id="feedback-text">Correct Answer!</span>
+                    </div>
+                </div>
+
+                <!-- Quiz Results View -->
+                <div class="quiz-view hidden" id="quiz-results-view">
+                    <div class="certificate-badge">
+                        <span class="gold-seal">★</span>
+                    </div>
+                    <h3 class="certificate-title">GOAT FAN PROFILE</h3>
+                    <p class="score-display">You Scored <span class="accent-text" id="results-score">0</span> / 10</p>
+                    <div class="badge-awarded" id="results-badge">LA MASIA JUNIOR</div>
+                    <p class="results-desc" id="results-summary">Good effort, but you still have more of Leo's history to learn!</p>
+                    
+                    <div class="quiz-actions-bar">
+                        <button class="btn primary-btn" id="btn-restart-quiz">Retry Quiz</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- HIGHLIGHT DOCUMENTARY CINEMA MODAL SCREENER -->
+    <div class="cinema-modal-overlay hidden" id="cinema-modal">
+        <div class="cinema-backdrop"></div>
+        <div class="cinema-modal-wrapper">
+            <button class="cinema-close-btn" id="btn-close-cinema" aria-label="Close Screener">✕</button>
+            <div class="cinema-player-container">
+                <div class="cinema-ambient-glow" id="cinema-glow"></div>
+                <!-- Real Video Player Iframe -->
+                <div class="screener-video-frame-wrapper">
+                    <iframe id="screener-video-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <!-- Details side drawer -->
+                <div class="screener-details-drawer">
+                    <div class="screener-content-box">
+                        <span class="screener-watermark">LM10 SCREENER</span>
+                        <h2 class="screener-title" id="sc-title">MOMENT TITLE</h2>
+                        <h4 class="screener-era" id="sc-era">ERA</h4>
+                        <p class="screener-narrative" id="sc-narrative">Narrative description of the moment goes here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <p>© 2026 Lionel Messi Fan Portal. Created with harness engineering principles.</p>
+        <p class="footer-sub">Optimized for high-fidelity animations, theme responsiveness, and synthesized acoustics.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
